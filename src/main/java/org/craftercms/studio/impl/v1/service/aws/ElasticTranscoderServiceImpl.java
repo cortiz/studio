@@ -5,26 +5,26 @@ import java.io.InputStream;
 import org.craftercms.commons.validation.annotations.param.ValidateParams;
 import org.craftercms.commons.validation.annotations.param.ValidateStringParam;
 import org.craftercms.studio.api.v1.aws.AwsProfileReader;
-import org.craftercms.studio.api.v1.aws.elastictranscoder.ElasticTranscoder;
-import org.craftercms.studio.api.v1.aws.elastictranscoder.TranscoderJob;
-import org.craftercms.studio.api.v1.aws.elastictranscoder.TranscoderProfile;
+import org.craftercms.studio.api.v1.aws.transcoding.Transcoder;
+import org.craftercms.studio.api.v1.aws.transcoding.TranscoderJob;
+import org.craftercms.studio.api.v1.aws.transcoding.TranscoderProfile;
 import org.craftercms.studio.api.v1.exception.AwsException;
 import org.craftercms.studio.api.v1.service.aws.AbstractAwsService;
 import org.craftercms.studio.api.v1.service.aws.ElasticTranscoderService;
 import org.springframework.beans.factory.annotation.Required;
 
 /**
- * Default implementation of {@link ElasticTranscoderService}. It uses a {@link AwsProfileReader} to get the specified transcoder
- * profile and a {@link ElasticTranscoder} instance to start the transcoding job.
+ * Default implementation of {@link ElasticTranscoderService}. It uses a {@link AwsProfileReader} to get the specified transcoding
+ * profile and a {@link Transcoder} instance to start the transcoding job.
  *
  * @author avasquez
  */
 public class ElasticTranscoderServiceImpl extends AbstractAwsService<TranscoderProfile> implements ElasticTranscoderService {
 
-    private ElasticTranscoder transcoder;
+    private Transcoder transcoder;
 
     @Required
-    public void setTranscoder(ElasticTranscoder transcoder) {
+    public void setTranscoder(Transcoder transcoder) {
         this.transcoder = transcoder;
     }
 

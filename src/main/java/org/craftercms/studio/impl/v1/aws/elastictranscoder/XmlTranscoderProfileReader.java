@@ -1,18 +1,34 @@
+/*
+ * Copyright (C) 2007-2018 Crafter Software Corporation. All rights reserved.
+ *  This program is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU General Public License as published by
+ *  the Free Software Foundation, either version 3 of the License, or
+ *  (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package org.craftercms.studio.impl.v1.aws.elastictranscoder;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.commons.configuration2.HierarchicalConfiguration;
-import org.craftercms.studio.api.v1.aws.elastictranscoder.TranscoderOutput;
-import org.craftercms.studio.api.v1.aws.elastictranscoder.TranscoderProfile;
+import org.craftercms.studio.api.v1.aws.transcoding.TranscoderOutput;
+import org.craftercms.studio.api.v1.aws.transcoding.TranscoderProfile;
 import org.craftercms.studio.api.v1.aws.AwsProfileReader;
 import org.craftercms.studio.api.v1.exception.AwsConfigurationException;
 import org.craftercms.studio.api.v1.aws.AbstractXmlProfileReader;
 
 /**
- * ElasticTranscoder implementation of {@link AwsProfileReader}. It uses Apache Commons Configuration to read an XML
- * transcoder profile like the following:
+ * Transcoder implementation of {@link AwsProfileReader}. It uses Apache Commons Configuration to read an XML
+ * transcoding profile like the following:
  *
  * <pre>
  * &gt;profile&lt;

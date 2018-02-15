@@ -17,18 +17,17 @@
 package org.craftercms.studio.api.v1.exception;
 
 /**
- * Exception thrown when an error occurs while transcoding a video.
- *
- * @author avasquez
+ * Exception thrown when a Transcoding error occurs.
+ * @author Carlos Ortiz.
+ * @since 3.0.7
  */
-public class AwsException extends TranscodingException {
+public class TranscodingException extends ServiceException {
 
-    public AwsException(String message) {
+    public TranscodingException(String message) {
         super(message);
     }
 
-    public AwsException(String message, Exception e) {
+    public TranscodingException(String message, Exception e) {
         super(message, e);
     }
-
 }
